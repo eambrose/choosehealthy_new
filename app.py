@@ -164,7 +164,7 @@ def recipes(ingredients):
     else:
         randnums = np.random.choice(len(suggest_recipes), n_display)
         use_recipes = [suggest_recipes[x] for x in randnums]
-    use_recipes = lemmatized_ingreds
+    #use_recipes = lemmatized_ingreds
     if n_ingreds == 0:
         print_ingred = 'Please enter an ingredient'
     elif n_ingreds == 1:
