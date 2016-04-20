@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+    background-position: center top;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),  url('../static/apples.jpg');
+    width: 100%;
+    background-repeat: repeat;
+    margin-top: 100px; 
+}
+</style>
+<body>  
+<div align='center' style='width:80%'>
+<h3 align='center'>Find recipes based on the ingredients that you already have. </h3>
+    </div>
+<table>
+    <tr>
+     <td width='80%'> 
+         
+         <br>
+         <h3 align='center'> {{pagetext}}</h3>
+         <br>
+     <div align = 'center'>
+            <form id='ingredient of interest' method='post' action='recipefinder'>
+                <p> Ingredient 1:   <input type='text' style='color:black' name='ingred_of_int1'/>
+                </p>
+                <p>
+                 Ingredient 2:   <input type='text' style='color:black' name='ingred_of_int2'/> 
+                </p>
+                <p>
+                 Ingredient 3:   <input type='text' style='color:black' name='ingred_of_int3'/> 
+                </p>
+                <p>
+                    <input type='submit' value='Go!' style='color:black'/>
+                    </p>
+                
+    </div>
+       </td>
+    </tr>
+</table>
+    {% endblock %}

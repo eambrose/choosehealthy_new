@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+    background-position: center top;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ),  url('../static/carrots.jpg');
+    width: 100%;
+    background-repeat: repeat;
+    margin-top: 100px; 
+}
+</style>
+<body>  
+<div align='center' style='width:80%'>
+<h3 align='center'>Cooking at home is generally cheaper and healthier than eating out but it does require planning, grocery shopping, and knowing how to pair ingredients. We've combined ingredient lists from over 4,000 recipes to make this easy. </h3>
+    <h3 align='center'>Use this grocery list builder to get a head start on grocery shopping by picking ingredients that go well together, or that go well with food you already have at home and find out what you can expect to pay before you shop.</h3>
+    </div>
+<table>
+    <tr>
+     <td width='60%'> 
+         
+         <br>
+         <h3 align='center'> {{pagetext}}</h3>
+         <br>
+         <br>
+     <div align = 'center'>
+        <h1>Enter an ingredient</h1>
+         <br>
+            <form id='ingredient of interest' method='post' action='grocerylist'>
+                <p> Ingredient:   <input type='text' style='color:black' name='ingred_of_int'/> <input type='submit' value='Go!' style='color:black'/>
+                    </p>
+                
+     </div>
+         </td>
+         <td class = 'col'>
+            <table align='center'>
+                <tr>
+                    <td>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td align='center'>
+                        <h4 align='center'>
+                        {{pagetext2}}
+                        </h4>
+
+                          <br>
+                    </td>
+                </tr>
+                <tr>
+{% for item in top_ingreds %}    
+
+              <td align='center' style='color:#ffffcc;font-size:120%'>
+                    
+{{ item }}
+                </td>
+            </tr>
+{% endfor %}
+            </table>
+        </td>
+    </tr>
+</table>
+    <br>
+    <br>
+    <h4 align='right' style='margin-right:20px'> Recipes from <a href="http://food2fork.com/" style='color:#ffe87c'>Food2Fork</a></h4>
+    <h4 align='right' style='margin-right:20px'> Prices from the <a href="http://www.bls.gov/cpi/" style='color:#ffe87c'>Consumer Price Index</a></h4>
+</body>
+{% endblock %}

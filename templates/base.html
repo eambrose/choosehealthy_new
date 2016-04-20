@@ -1,0 +1,86 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <title>{{page_title}}</title>
+<style>
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #008080;
+}
+
+li {
+    display:inline-block;
+
+}
+
+li a {
+    display: inline-block;
+    color: #93ffe8;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size:150%;
+}
+
+li a:hover {
+    background-color: #98FF98;
+}
+body {
+    background-position: center top;
+    background: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ),  url('../static/veggies.jpg');
+    height: 100%;
+    background-repeat: repeat;
+    margin-top: 80px; 
+}
+h1 {
+    color: #93ffe8;
+}
+h2 {
+    color: #93ffe8;
+}
+h3 {
+    color: #93ffe8;
+}
+h4 {
+    color: #93ffe8;
+}
+p {
+    color: #93ffe8;
+}
+</style>
+
+ </head>
+
+ <nav class="navbar navbar-fixed-top nav-justified">
+          <ul class="navbar nav navbar-fixed_top nav-justified">
+            <li>
+              <a href="/welcome">Welcome</a>
+            </li>
+
+            <li >
+              <a href="/background">Background</a>
+            </li>
+
+            <li>
+              <a href="/grocerylist">Grocery List Builder</a>
+            </li>
+              <li>
+              <a href="/recipefinder">Recipes Finder</a>
+            </li>
+          </ul>
+</nav class="navbar navbar-fixed-top">
+
+
+    <div class='block-content' align = 'center'>
+    {% block content %}
+        {% endblock %}
+    </div>
+</html>

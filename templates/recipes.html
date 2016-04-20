@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<style>
+    body {
+    background-position: center top;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('../static/carrots.jpg');
+    width: 100%;
+    background-repeat: repeat;
+    margin-top: 100px; 
+}
+</style>
+<table>
+                <tr>
+                    <h3> {{print_ingred}}</h3>
+    </tr>
+    <tr>
+
+{% for recipe in use_recipes %}
+
+                    <td align='center' style='color:#ffffcc;font-size:125%'>
+                        <table align='center'>
+                            <tr align='center'>
+                                <td width='50%' align='left'>
+                                    <h3> <a href="{{recipe[2]}}" style='color:#ffe87c'>{{recipe[0]}}</a>
+                                    </h3>
+                                </td>
+                                <td width='50%' align='left'>
+                        <img src={{recipe[1]}} height='300px'>
+                                </td>
+                            </tr>
+                            <tr>
+                                <br>
+                            </tr>
+                       
+                        </table>
+                    </td>
+            </tr>
+{% endfor %}
+</table>
+
+{% endblock%}
