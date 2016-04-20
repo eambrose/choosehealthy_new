@@ -10,6 +10,7 @@ import numpy as np
 import pickle
 import itertools
 import nltk
+nltk.data.path.append('./nltk_data/')
 
 app = Flask(__name__)
 
