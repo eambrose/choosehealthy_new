@@ -10,7 +10,7 @@ import numpy as np
 import pickle
 import itertools
 import nltk
-nltk.data.path.append('./nltk_data/')
+
 
 app = Flask(__name__)
 
@@ -138,6 +138,7 @@ def recipefinder():
    
 @app.route('/recipes/<ingredients>', methods=['GET','POST'])
 def recipes(ingredients):
+    nltk.data.path.append('./nltk_data/')
     n_display = 7
     use_ingreds = ingredients.split('-')
     use_ingreds = [x for x in use_ingreds if x != '']
