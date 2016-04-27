@@ -138,6 +138,7 @@ def recipefinder():
    
 @app.route('/recipes/<ingredients>', methods=['GET','POST'])
 def recipes(ingredients):
+    page_title='Recipe Suggestions'
     nltk.data.path.append('./nltk_data/')
     n_display = 7
     use_ingreds = ingredients.split('-')
@@ -173,7 +174,43 @@ def recipes(ingredients):
         print_ingred = 'Here are some recipes using ' + use_ingreds[0] + ' and ' + use_ingreds[1] + ':'
     elif n_ingreds == 3:
         print_ingred = 'Here are some recipes using ' + use_ingreds[0] + ', ' + use_ingreds[1] + ', and ' + use_ingreds[2] + ':'
-    return render_template('recipes.html', print_ingred = print_ingred, use_recipes = use_recipes)
+    return render_template('recipes.html', page_title=page_title, print_ingred = print_ingred, use_recipes = use_recipes)
+
+@app.route('/recipeclusters', methods=['GET','POST'])
+def recipeclusters():
+  page_title = "Recipe Clusters"
+  pagetext = 'Choose a word cloud that sounds tasty!'
+  if request.method=='GET':
+      return render_template('recipeclusters.html', page_title=page_title)
+    
+@app.route('/clusters/<clust>',methods=['GET','POST'])
+def recipesfromclusters(clust):
+  page_title = "Recipe Suggestions"
+  if clust == 'cluster1':
+      recipes = pickle.load(open('clust0.p','rb'))
+  elif clust == 'cluster2':
+      recipes = pickle.load(open('clust1.p','rb'))
+  elif clust == 'cluster3':
+      recipes = pickle.load(open('clust2.p','rb'))
+  elif clust == 'cluster4':
+      recipes = pickle.load(open('clust3.p','rb'))
+  elif clust == 'cluster5':
+      recipes = pickle.load(open('clust4.p','rb'))
+  elif clust == 'cluster6':
+      recipes = pickle.load(open('clust5.p','rb'))
+  elif clust == 'cluster7':
+      recipes = pickle.load(open('clust6.p','rb'))
+  elif clust == 'cluster8':
+      recipes = pickle.load(open('clust8.p','rb'))
+  recipekeys = recipes.keys()
+  indices = np.random.random_integers(0,len(recipekeys),7)
+  print_ingred = ''
+  use_recipes = []
+  for index in xrange(len(indices)):
+      use_index = indices[index]
+      new_recipe = recipes[recipekeys[use_index]]
+      use_recipes.append([new_recipe[0],new_recipe[1],new_recipe[2]])
+  return render_template('recipes.html', page_title=page_title,print_ingred=print_ingred,use_recipes=use_recipes)
 
 if __name__ == '__main__':
-  app.run(port=33507)
+  app.run(port=33507,debug=True)

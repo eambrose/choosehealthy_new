@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+    background-position: center top;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('../static/apples.jpg');
+    width: 100%;
+    background-repeat: repeat;
+    margin-top: 100px; 
+}
+</style>
+<body>  
+<div align='center' style='width:80%'>
+<h3 align='center'>Click on a word cloud that looks tasty!</h3>
+    </div>
+<table>
+    <tr>
+     <td width='45%'> 
+         <a href="/clusters/cluster1">
+            <img src="../static/wc0.jpg" alt="my picture" height="300" width="400" />
+        </a>
+         <br><br><br>
+       </td>
+        <td width='45%'>
+         <a href="/clusters/cluster2">
+            <img src="../static/wc1.jpg" alt="my picture" height="300" width="400" />
+        </a>
+            <br><br><br>
+        </td>
+    </tr>
+
+    <tr>
+       <td width='45%'> 
+         <a href="/clusters/cluster3">
+            <img src="../static/wc2.jpg" alt="my picture" height="300" width="400" />
+        </a>
+           <br><br><br>
+       </td>
+        <td width='45%'>
+         <a href="/clusters/cluster4">
+            <img src="../static/wc3.jpg" alt="my picture" height="300" width="400" />
+        </a>
+            <br><br><br>
+        </td>
+    </tr>
+
+        <tr>
+       <td width='45%'> 
+         <a href="/clusters/cluster5">
+            <img src="../static/wc4.jpg" alt="my picture" height="300" width="400" />
+        </a>
+           <br><br><br>
+       </td>
+        <td width='45%'>
+         <a href="/clusters/cluster6">
+            <img src="../static/wc5.jpg" alt="my picture" height="300" width="400" />
+        </a>
+            <br><br><br>
+        </td>
+    </tr>
+
+        <tr>
+       <td width='45%'> 
+         <a href="/clusters/cluster7">
+            <img src="../static/wc6.jpg" alt="my picture" height="300" width="400" />
+        </a>
+           <br><br><br>
+       </td>
+        <td width='45%'>
+         <a href="/clusters/cluster8">
+            <img src="../static/wc8.jpg" alt="my picture" height="300" width="400" />
+        </a>
+            <br><br><br>
+        </td>
+    </tr>
+</table>
+    {% endblock %}
