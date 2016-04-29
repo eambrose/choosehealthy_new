@@ -163,7 +163,7 @@ def recipes(ingredients):
     if len(suggest_recipes) < n_display:
         use_recipes = suggest_recipes
     else:
-        randnums = np.random.choice(len(suggest_recipes), n_display)
+        randnums = np.random.choice(len(suggest_recipes), size=n_display,replace=False)
         use_recipes = [suggest_recipes[x] for x in randnums]
     #use_recipes = lemmatized_ingreds
     if n_ingreds == 0:
@@ -203,7 +203,7 @@ def recipesfromclusters(clust):
   elif clust == 'cluster8':
       recipes = pickle.load(open('clust8.p','rb'))
   recipekeys = recipes.keys()
-  indices = np.random.random_integers(0,len(recipekeys),7)
+  indices = np.random.choice(range(0,len(recipekeys)),size=7,replace=False)
   print_ingred = ''
   use_recipes = []
   for index in xrange(len(indices)):
