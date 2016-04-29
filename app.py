@@ -189,7 +189,7 @@ def recipesfromclusters(clust):
   if clust == 'cluster1':
       recipes = pickle.load(open('clust0.p','rb'))
   elif clust == 'cluster2':
-      recipes = pickle.load(open('clust1.p','rb'))
+      recipes = pickle.load(open('clust8.p','rb'))
   elif clust == 'cluster3':
       recipes = pickle.load(open('clust2.p','rb'))
   elif clust == 'cluster4':
@@ -201,7 +201,7 @@ def recipesfromclusters(clust):
   elif clust == 'cluster7':
       recipes = pickle.load(open('clust6.p','rb'))
   elif clust == 'cluster8':
-      recipes = pickle.load(open('clust8.p','rb'))
+      recipes = pickle.load(open('clust1.p','rb'))
   recipekeys = recipes.keys()
   indices = np.random.choice(range(0,len(recipekeys)),size=7,replace=False)
   print_ingred = ''
@@ -213,4 +213,4 @@ def recipesfromclusters(clust):
   return render_template('recipes.html', page_title=page_title,print_ingred=print_ingred,use_recipes=use_recipes)
 
 if __name__ == '__main__':
-  app.run(port=33507,debug=True)
+  app.run(port=33507)
